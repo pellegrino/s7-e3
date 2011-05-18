@@ -4,6 +4,9 @@ require 'bindata'
 module SC2Refinery
 
   module Structs
+
+    # Reference
+    # https://github.com/ascendedguard/sc2replay-csharp/wiki/keyValueStruct
     class KeyValue < BinData::Record
       uint16be :param_key
       uint8 :first_byte
@@ -14,7 +17,7 @@ module SC2Refinery
       end
     end
 
-    # Parsing player details according to the specs presented at both links
+    # Reference
     # https://github.com/ascendedguard/sc2replay-csharp/wiki/playerDetailStruct
     class PlayerDetails < BinData::Record
       endian :big
