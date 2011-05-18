@@ -23,6 +23,12 @@ describe Parser do
                      :second_player => "pellegrino",
                      :map => "Metal\xC3\xB3polis") # Metalópolis
                                                    # encoded in ISO-8859-1
+  end
+  it "should parse correctly older version replays" do
+    validate_parsing("1v1-game5-old-version.sc2replay",
+                     :first_player => "WolfMan",
+                     :second_player => "Boom",
+                     :map => "Abyss")
 
   end
 
