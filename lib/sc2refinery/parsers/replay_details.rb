@@ -52,7 +52,7 @@ class PlayerDetails < BinData::Record
   key_value :param2
   uint16 :unknown3
   stringz :unknown6
-  uint16  :unkown4
+  array :unknown4 , :type => :uint8 , :initial_length => 3
   uint8   :double_race_length
   string  :race  , :read_length => lambda { double_race_length / 2 }
   array  :unknown5, :type => :uint8 , :initial_length => 3
