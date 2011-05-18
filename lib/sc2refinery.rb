@@ -1,5 +1,3 @@
 require_relative 'sc2refinery/parsers'
+require_relative 'sc2refinery/replay'
 
-module Sc2refinery
-  # Your code goes here...
-end

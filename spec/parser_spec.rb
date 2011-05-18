@@ -2,23 +2,37 @@ require 'spec_helper'
 
 describe Parser do
 
+  it "should parse replays correctly" do
+    validate_parsing("1v1-game1.sc2replay",
+                     :first_player => "pellegrino",
+                     :second_player => "DeusEx",
+                     :map => "Cavernas Xel'Naga")
 
-  it "should also parse games from a different region than North American" do
-    replay = File.new("spec/fixtures/1v1-game-la.sc2replay")
+    validate_parsing("1v1-game2.sc2replay",
+                     :first_player => "pellegrino",
+                     :second_player => "Arlequim",
+                     :map => "Vale da Selva")
 
-    replay = Parser.parse(replay)
-    replay.first_player.should == "pellegrino"
-    replay.second_player.should == "DeusEx"
-    replay.map.should == "Cavernas Xel'Naga"
+    validate_parsing("1v1-game3.sc2replay",
+                     :first_player => "pellegrino",
+                     :second_player => "Narsejaum",
+                     :map => "Cavernas Xel'Naga")
+
+    validate_parsing("1v1-game4.sc2replay",
+                     :first_player => "Slaughter",
+                     :second_player => "pellegrino",
+                     :map => "Metal\xC3\xB3polis") # Metalópolis
+                                                   # encoded in ISO-8859-1
+
   end
 
-  it "should return a replay instance containing both players and the map name" do
-    replay = File.new("spec/fixtures/1v1-game2.sc2replay")
-
-    replay = Parser.parse(replay)
-    replay.first_player.should == "pellegrino"
-    replay.second_player.should == "Arlequim"
-    replay.map.should == "Vale da Selva"
+  private
+  def validate_parsing(replay_name, params)
+    replay = Parser.parse(File.new("spec/fixtures/#{replay_name}"))
+    replay.first_player.should == params[:first_player]
+    replay.second_player.should == params[:second_player]
+    replay.map.should == params[:map]
   end
+
 
 end
