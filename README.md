@@ -14,7 +14,8 @@ Basic Player and Map information.
 
 ## Usage
         replay_file = File.new("spec/fixtures/1v1-game1.sc2replay")
-        @replay = SC2Refinery::Parser.parse(replay_file)
+        @replay = SC2Refinery.load(replay_file)
+
         puts @replay.first_player # pellegrino
         puts @replay.second_player # DeusEx
         puts @replay.map # Cavernas Xel'Naga
