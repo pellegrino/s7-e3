@@ -28,6 +28,7 @@ The structures mapped at this project are in lib/sc2refinery/parsers/replay_deta
 
 ## Links and documentation
 https://github.com/nolanw/mpq
+
 https://github.com/ascendedguard/sc2replay-csharp/wiki/.sc2replay-overview
 - from this link i took most of the information about the archive
 needed to build this project.
