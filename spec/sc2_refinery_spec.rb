@@ -36,7 +36,7 @@ describe SC2Refinery do
 
     private
     def validate_parsing(replay_name, params)
-      replay = SC2Refinery.load(File.new("spec/fixtures/#{replay_name}"))
+      replay = SC2Refinery.load("spec/fixtures/#{replay_name}")
       replay.first_player.should == params[:first_player]
       replay.second_player.should == params[:second_player]
       replay.map.should == params[:map]

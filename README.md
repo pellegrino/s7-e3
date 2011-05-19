@@ -13,8 +13,7 @@ This project, currently, parses the "replay.details" file, extracting
 Basic Player and Map information.
 
 ## Usage
-        replay_file = File.new("spec/fixtures/1v1-game1.sc2replay")
-        @replay = SC2Refinery.load(replay_file)
+        @replay = SC2Refinery.load("spec/fixtures/1v1-game1.sc2replay")
 
         puts @replay.first_player # pellegrino
         puts @replay.second_player # DeusEx
