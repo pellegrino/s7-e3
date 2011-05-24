@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Replay do
+describe SC2Refinery::Replay do
 
   before do
-    @replay =  Replay.new(:map => "The Lost Temple", :first_player => "pellegrino", :second_player => "DeusEx")
+    @replay =  SC2Refinery::Replay.new(:map => "The Lost Temple", :first_player => "pellegrino", :second_player => "DeusEx")
   end
 
   it "should have first player's name" do
